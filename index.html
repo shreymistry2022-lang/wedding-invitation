@@ -1362,6 +1362,193 @@
       opacity: 1;
     }
 
+    /* ===================================================
+       EXTRA INTERACTIVE ANIMATION & TAP STYLES
+       =================================================== */
+    /* 1. Touch Sparkles */
+    .touch-sparkle {
+      position: fixed;
+      pointer-events: none;
+      z-index: 99999;
+      font-size: 16px;
+      user-select: none;
+      animation: sparkleFly 0.75s cubic-bezier(0.2, 0.8, 0.4, 1) forwards;
+      will-change: transform, opacity;
+      filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.8));
+    }
+    @keyframes sparkleFly {
+      0% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 1; }
+      100% { transform: translate(var(--tx), var(--ty)) scale(0) rotate(220deg); opacity: 0; }
+    }
+
+    /* 2. Interactive Sacred Diya Widget */
+    .sacred-diya-interactive-box {
+      width: 100%;
+      max-width: 320px;
+      margin: 18px auto 10px;
+      padding: 16px 12px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 248, 238, 0.98) 100%);
+      border: 1.5px solid var(--gold-primary);
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(110, 31, 47, 0.12), inset 0 0 15px rgba(212, 175, 55, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .sacred-diya-interactive-box:active {
+      transform: scale(0.97);
+    }
+    .diya-glow-halo {
+      position: absolute;
+      top: 15px;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 200, 0, 0.5) 0%, rgba(255, 120, 0, 0.2) 50%, transparent 75%);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+    .diya-lit .diya-glow-halo {
+      opacity: 1;
+      animation: pulseHalo 2s infinite alternate ease-in-out;
+    }
+    @keyframes pulseHalo {
+      0% { transform: scale(0.9); opacity: 0.6; }
+      100% { transform: scale(1.3); opacity: 0.95; }
+    }
+    .diya-flame-group {
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .diya-lit .diya-flame-group {
+      opacity: 1 !important;
+      animation: flameDance 1.2s infinite alternate ease-in-out;
+    }
+    @keyframes flameDance {
+      0% { transform: scale(1) rotate(-2deg); }
+      50% { transform: scale(1.08, 0.95) rotate(2deg); }
+      100% { transform: scale(0.95, 1.1) rotate(-1deg); }
+    }
+    .diya-prompt-pill {
+      margin-top: 10px;
+      background: rgba(110, 31, 47, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--wine-rich);
+      letter-spacing: 0.5px;
+      text-align: center;
+      transition: background 0.3s, color 0.3s;
+    }
+    .diya-lit .diya-prompt-pill {
+      background: var(--wine-rich);
+      color: var(--gold-light);
+      border-color: var(--gold-primary);
+    }
+
+    /* 3. Floating "Shower Blessings" Pill Button */
+    .blessings-floating-pill {
+      position: fixed;
+      bottom: 18px;
+      left: 18px;
+      z-index: 45;
+      background: linear-gradient(135deg, #8a1e34 0%, #5a0c1c 100%);
+      border: 1.5px solid var(--gold-primary);
+      border-radius: 30px;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--gold-light);
+      box-shadow: 0 4px 18px rgba(90, 12, 28, 0.4), 0 0 10px rgba(212, 175, 55, 0.3);
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 600;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .blessings-floating-pill:active {
+      transform: scale(0.92);
+    }
+    .blessing-icon-bounce {
+      font-size: 14px;
+      animation: gentleIconPulse 2s infinite ease-in-out;
+    }
+    @keyframes gentleIconPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+    .blessing-counter-tag {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 2px 7px;
+      border-radius: 12px;
+      font-size: 9.5px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .floating-blessing-heart {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      font-size: 14px;
+      font-weight: 700;
+      color: #ff3366;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 4px 10px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      border: 1px solid #ffd700;
+      animation: floatHeartUp 1.2s cubic-bezier(0.2, 0.8, 0.3, 1) forwards;
+    }
+    @keyframes floatHeartUp {
+      0% { transform: translateY(0) scale(0.8); opacity: 1; }
+      100% { transform: translateY(-70px) scale(1.15); opacity: 0; }
+    }
+
+    /* 4. Ganesh Medallion Radiance Aura & Tappable Hint */
+    .ganesh-tappable {
+      cursor: pointer;
+      transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+      position: relative;
+    }
+    .ganesh-tappable:active {
+      transform: scale(0.92);
+    }
+    .ganesh-aura-pulse {
+      animation: ganeshShockwave 0.8s ease-out forwards;
+    }
+    @keyframes ganeshShockwave {
+      0% { filter: drop-shadow(0 0 0 rgba(212, 175, 55, 0.8)); transform: scale(0.95); }
+      50% { filter: drop-shadow(0 0 25px rgba(255, 215, 0, 1)) drop-shadow(0 0 50px rgba(255, 140, 0, 0.8)); transform: scale(1.08); }
+      100% { filter: drop-shadow(0 4px 8px rgba(168, 123, 29, 0.35)); transform: scale(1); }
+    }
+
+    /* 5. Festivities Accordion in Customizer */
+    .fest-edit-card {
+      background: #faf6f0;
+      border: 1.5px solid #e0ceba;
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+    .fest-edit-badge {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--wine-rich);
+      margin-bottom: 8px;
+      padding-bottom: 4px;
+      border-bottom: 1px dashed rgba(212, 175, 55, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
     /* Floating Customize Button */
     .customize-toggle-btn {
       position: fixed;
@@ -1511,7 +1698,7 @@
             <div class="cover-shree">|| श्री गणेशाय नमः ||</div>
             
             <!-- Auspicious Ganesh Medallion SVG -->
-            <svg class="ganesh-cover-medallion" viewBox="0 0 100 100">
+            <svg class="ganesh-cover-medallion ganesh-tappable" viewBox="0 0 100 100" onclick="blessGaneshMedallion(event)" title="Tap for Ganesha's Blessings">
               <use href="#ganesh-svg-art" />
             </svg>
             
@@ -1584,7 +1771,7 @@
           
           <!-- Top: Ganesh Medallion -->
           <div style="display: flex; flex-direction: column; align-items: center;">
-            <svg class="page-ganesh-medallion" viewBox="0 0 100 100">
+            <svg class="page-ganesh-medallion ganesh-tappable" viewBox="0 0 100 100" onclick="blessGaneshMedallion(event)" title="Tap for Ganesha's Blessings">
               <use href="#ganesh-svg-art" />
             </svg>
             <div class="together-line">Together with their families</div>
@@ -1633,6 +1820,25 @@
           </svg>
         </div>
 
+        <!-- Interactive Sacred Diya (Tap to Light) -->
+        <div class="sacred-diya-interactive-box" id="sacred-diya-widget" onclick="toggleDiyaLight(event)" title="Tap to Light Diya for Auspicious Blessings">
+          <div class="diya-glow-halo" id="diya-halo"></div>
+          <svg style="width: 100px; height: 58px;" viewBox="0 0 120 70">
+            <path d="M20,48 Q60,66 100,48 Q60,36 20,48 Z" fill="#b8860b"/>
+            <ellipse cx="60" cy="48" rx="38" ry="8" fill="#d4af37"/>
+            <ellipse cx="60" cy="46" rx="32" ry="6" fill="#8a6414"/>
+            <line x1="60" y1="44" x2="60" y2="35" stroke="#333" stroke-width="2.5" stroke-linecap="round"/>
+            <g class="diya-flame-group" id="diya-flame" style="opacity: 0.2; transform-origin: 60px 35px;">
+              <path d="M60,35 Q50,22 55,14 Q60,6 60,6 Q60,6 65,14 Q70,22 60,35 Z" fill="#ff4500"/>
+              <path d="M60,33 Q54,23 57,17 Q60,11 60,11 Q60,11 63,17 Q66,23 60,33 Z" fill="#ffd700"/>
+              <circle cx="60" cy="24" r="3" fill="#fff"/>
+            </g>
+          </svg>
+          <div class="diya-prompt-pill" id="diya-status-pill">
+            <span>✨ Tap to Light Sacred Diya 🪔</span>
+          </div>
+        </div>
+
         <div class="scroll-interaction-container">
           <!-- Golden Rod with Finials -->
           <div class="scroll-rod">
@@ -1645,7 +1851,7 @@
           <div class="scroll-parchment-sheet" id="wedding-scroll">
             <div class="scroll-inner-content">
               
-              <svg class="scroll-ganesh" viewBox="0 0 100 100">
+              <svg class="scroll-ganesh ganesh-tappable" viewBox="0 0 100 100" onclick="blessGaneshMedallion(event)" title="Tap for Ganesha's Blessings">
                 <use href="#ganesh-svg-art" />
               </svg>
 
@@ -1768,23 +1974,23 @@
               <div>
                 <div class="event-title-badge">
                   <div class="event-icon-circle">
-                    <span style="font-size: 16px;">🪔</span>
+                    <span id="fest-icon-0" style="font-size: 16px;">🪔</span>
                   </div>
-                  <div class="event-title-text">Mata Pujan</div>
+                  <div class="event-title-text" id="fest-title-0">Mata Pujan</div>
                 </div>
 
                 <div class="event-details-rows">
                   <div class="detail-row">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg>
-                    <span>Thursday, 10 Dec 2026</span>
+                    <span id="fest-date-0">Thursday, 10 Dec 2026</span>
                   </div>
                   <div class="detail-row">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    <span>10:00 AM onwards</span>
+                    <span id="fest-time-0">10:00 AM onwards</span>
                   </div>
                   <div class="detail-row">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    <span>The Grand Ballroom, Heritage Wing</span>
+                    <span id="fest-place-0">The Grand Ballroom, Heritage Wing</span>
                   </div>
                 </div>
               </div>
@@ -1792,9 +1998,9 @@
               <div class="dress-code-row">
                 <span class="dress-code-label">Dress Code:</span>
                 <div class="dress-swatch-group">
-                  <div class="color-swatch-chip" style="background: #F5F5DC;"></div>
-                  <div class="color-swatch-chip" style="background: #D4AF37;"></div>
-                  <span class="dress-name">Traditional (Beige &amp; Gold)</span>
+                  <div class="color-swatch-chip" id="fest-c1-chip-0" style="background: #F5F5DC;"></div>
+                  <div class="color-swatch-chip" id="fest-c2-chip-0" style="background: #D4AF37;"></div>
+                  <span class="dress-name" id="fest-dress-0">Traditional (Beige &amp; Gold)</span>
                 </div>
               </div>
             </div>
@@ -1831,23 +2037,23 @@
               <div>
                 <div class="event-title-badge">
                   <div class="event-icon-circle">
-                    <span style="font-size: 16px;">🌼</span>
+                    <span id="fest-icon-1" style="font-size: 16px;">🌼</span>
                   </div>
-                  <div class="event-title-text">Haldi Ceremony</div>
+                  <div class="event-title-text" id="fest-title-1">Haldi Ceremony</div>
                 </div>
 
                 <div class="event-details-rows">
                   <div class="detail-row">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg>
-                    <span>Friday, 11 Dec 2026</span>
+                    <span id="fest-date-1">Friday, 11 Dec 2026</span>
                   </div>
                   <div class="detail-row">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    <span>11:00 AM onwards</span>
+                    <span id="fest-time-1">11:00 AM onwards</span>
                   </div>
                   <div class="detail-row">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    <span>Courtyard Palms &amp; Splash Pool</span>
+                    <span id="fest-place-1">Courtyard Palms &amp; Splash Pool</span>
                   </div>
                 </div>
               </div>
@@ -1855,9 +2061,9 @@
               <div class="dress-code-row">
                 <span class="dress-code-label">Dress Code:</span>
                 <div class="dress-swatch-group">
-                  <div class="color-swatch-chip" style="background: #FFD700;"></div>
-                  <div class="color-swatch-chip" style="background: #FFA500;"></div>
-                  <span class="dress-name">Wear Yellow (Sunshine)</span>
+                  <div class="color-swatch-chip" id="fest-c1-chip-1" style="background: #FFD700;"></div>
+                  <div class="color-swatch-chip" id="fest-c2-chip-1" style="background: #FFA500;"></div>
+                  <span class="dress-name" id="fest-dress-1">Wear Yellow (Sunshine)</span>
                 </div>
               </div>
             </div>
@@ -1885,23 +2091,23 @@
               <div>
                 <div class="event-title-badge">
                   <div class="event-icon-circle">
-                    <span style="font-size: 16px;">🌿</span>
+                    <span id="fest-icon-2" style="font-size: 16px;">🌿</span>
                   </div>
-                  <div class="event-title-text">Mehendi Extravaganza</div>
+                  <div class="event-title-text" id="fest-title-2">Mehendi Extravaganza</div>
                 </div>
 
                 <div class="event-details-rows">
                   <div class="detail-row">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg>
-                    <span>Friday, 11 Dec 2026</span>
+                    <span id="fest-date-2">Friday, 11 Dec 2026</span>
                   </div>
                   <div class="detail-row">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    <span>04:00 PM onwards</span>
+                    <span id="fest-time-2">04:00 PM onwards</span>
                   </div>
                   <div class="detail-row">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    <span>Poolside Lawn &amp; Cabanas</span>
+                    <span id="fest-place-2">Poolside Lawn &amp; Cabanas</span>
                   </div>
                 </div>
               </div>
@@ -1909,9 +2115,9 @@
               <div class="dress-code-row">
                 <span class="dress-code-label">Dress Code:</span>
                 <div class="dress-swatch-group">
-                  <div class="color-swatch-chip" style="background: #2e7d32;"></div>
-                  <div class="color-swatch-chip" style="background: #a5d6a7;"></div>
-                  <span class="dress-name">Wear Green (Mint / Emerald)</span>
+                  <div class="color-swatch-chip" id="fest-c1-chip-2" style="background: #2e7d32;"></div>
+                  <div class="color-swatch-chip" id="fest-c2-chip-2" style="background: #a5d6a7;"></div>
+                  <span class="dress-name" id="fest-dress-2">Wear Green (Mint / Emerald)</span>
                 </div>
               </div>
             </div>
@@ -1944,23 +2150,23 @@
               <div>
                 <div class="event-title-badge">
                   <div class="event-icon-circle">
-                    <span style="font-size: 16px;">💃</span>
+                    <span id="fest-icon-3" style="font-size: 16px;">💃</span>
                   </div>
-                  <div class="event-title-text">Musical Sangeet</div>
+                  <div class="event-title-text" id="fest-title-3">Musical Sangeet</div>
                 </div>
 
                 <div class="event-details-rows">
                   <div class="detail-row">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg>
-                    <span>Saturday, 12 Dec 2026</span>
+                    <span id="fest-date-3">Saturday, 12 Dec 2026</span>
                   </div>
                   <div class="detail-row">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    <span>07:00 PM onwards</span>
+                    <span id="fest-time-3">07:00 PM onwards</span>
                   </div>
                   <div class="detail-row">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    <span>Royal Banquet &amp; Crystal Amphitheatre</span>
+                    <span id="fest-place-3">Royal Banquet &amp; Crystal Amphitheatre</span>
                   </div>
                 </div>
               </div>
@@ -1968,9 +2174,9 @@
               <div class="dress-code-row">
                 <span class="dress-code-label">Dress Code:</span>
                 <div class="dress-swatch-group">
-                  <div class="color-swatch-chip" style="background: #4A154B;"></div>
-                  <div class="color-swatch-chip" style="background: #D946EF;"></div>
-                  <span class="dress-name">Indo-Western (Purple &amp; Pink)</span>
+                  <div class="color-swatch-chip" id="fest-c1-chip-3" style="background: #4A154B;"></div>
+                  <div class="color-swatch-chip" id="fest-c2-chip-3" style="background: #D946EF;"></div>
+                  <span class="dress-name" id="fest-dress-3">Indo-Western (Purple &amp; Pink)</span>
                 </div>
               </div>
             </div>
@@ -2002,23 +2208,23 @@
               <div>
                 <div class="event-title-badge">
                   <div class="event-icon-circle">
-                    <span style="font-size: 16px;">🔥</span>
+                    <span id="fest-icon-4" style="font-size: 16px;">🔥</span>
                   </div>
-                  <div class="event-title-text">Baraat &amp; Pheras</div>
+                  <div class="event-title-text" id="fest-title-4">Baraat &amp; Pheras</div>
                 </div>
 
                 <div class="event-details-rows">
                   <div class="detail-row">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg>
-                    <span>Sunday, 13 Dec 2026</span>
+                    <span id="fest-date-4">Sunday, 13 Dec 2026</span>
                   </div>
                   <div class="detail-row">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    <span>Baraat: 4 PM | Pheras: 5 PM</span>
+                    <span id="fest-time-4">Baraat: 4 PM | Pheras: 5 PM</span>
                   </div>
                   <div class="detail-row">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    <span>Central Palace Gardens &amp; Mandap</span>
+                    <span id="fest-place-4">Central Palace Gardens &amp; Mandap</span>
                   </div>
                 </div>
               </div>
@@ -2026,9 +2232,9 @@
               <div class="dress-code-row">
                 <span class="dress-code-label">Dress Code:</span>
                 <div class="dress-swatch-group">
-                  <div class="color-swatch-chip" style="background: #8B0000;"></div>
-                  <div class="color-swatch-chip" style="background: #D4AF37;"></div>
-                  <span class="dress-name">Royal Festive (Red &amp; Gold)</span>
+                  <div class="color-swatch-chip" id="fest-c1-chip-4" style="background: #8B0000;"></div>
+                  <div class="color-swatch-chip" id="fest-c2-chip-4" style="background: #D4AF37;"></div>
+                  <span class="dress-name" id="fest-dress-4">Royal Festive (Red &amp; Gold)</span>
                 </div>
               </div>
             </div>
@@ -2253,7 +2459,7 @@
            =================================================== -->
       <section class="closing-section">
         
-        <svg class="closing-ganesh" viewBox="0 0 100 100">
+        <svg class="closing-ganesh ganesh-tappable" viewBox="0 0 100 100" onclick="blessGaneshMedallion(event)" title="Tap for Ganesha's Blessings">
           <use href="#ganesh-svg-art" />
         </svg>
 
@@ -2291,6 +2497,13 @@
 
   <!-- Toast Message -->
   <div id="toast-msg">Address copied to clipboard! 📋</div>
+
+  <!-- Floating Shower Blessings Button -->
+  <button class="blessings-floating-pill" id="btn-shower-blessings" onclick="showerCoupleBlessings(event)" title="Shower Flower Petals & Send Blessings">
+    <span class="blessing-icon-bounce">🌸</span>
+    <span>Blessings</span>
+    <span class="blessing-counter-tag" id="blessing-counter-val">1,248</span>
+  </button>
 
   <!-- Floating Customize Button -->
   <button class="customize-toggle-btn" onclick="openCustomizerModal()">
@@ -2374,6 +2587,95 @@
       <div class="form-group">
         <label>YouTube Song Link</label>
         <input type="text" id="input-youtube-link" value="https://www.youtube.com">
+      </div>
+
+      <!-- Collapsible Festivities Editor Section -->
+      <div style="margin-top: 18px; border-top: 1px dashed #d4c2a8; padding-top: 14px;">
+        <div onclick="toggleFestivitiesAccordion()" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; background: #faf4eb; padding: 11px 14px; border-radius: 12px; border: 1.5px solid var(--gold-primary); box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+          <span style="font-family: var(--font-serif); font-size: 13.5px; font-weight: 700; color: var(--wine-rich);">
+            🎪 Edit Wedding Festivities (5 Ceremonies)
+          </span>
+          <span id="fest-arrow-icon" style="font-size: 13px; color: var(--gold-dark); transition: transform 0.3s; font-weight: bold;">▼</span>
+        </div>
+
+        <div id="festivities-edit-container" style="display: none; margin-top: 14px;">
+          
+          <!-- Ceremony 1 -->
+          <div class="fest-edit-card">
+            <div class="fest-edit-badge"><span>🪔</span> Ceremony 1 (Mata Pujan / Pujan)</div>
+            <div class="form-group"><label>Ceremony Name</label><input type="text" id="input-fest-title-0" value="Mata Pujan"></div>
+            <div class="form-group"><label>Emoji Icon</label><input type="text" id="input-fest-icon-0" value="🪔"></div>
+            <div class="form-group"><label>Day &amp; Date</label><input type="text" id="input-fest-date-0" value="Thursday, 10 Dec 2026"></div>
+            <div class="form-group"><label>Time</label><input type="text" id="input-fest-time-0" value="10:00 AM onwards"></div>
+            <div class="form-group"><label>Venue / Place</label><input type="text" id="input-fest-place-0" value="The Grand Ballroom, Heritage Wing"></div>
+            <div class="form-group"><label>Dress Code</label><input type="text" id="input-fest-dress-0" value="Traditional (Beige &amp; Gold)"></div>
+            <div style="display: flex; gap: 10px; margin-top: 6px;">
+              <div style="flex:1;"><label style="font-size:10px; text-transform:uppercase;">Color 1</label><input type="color" id="input-fest-c1-0" value="#F5F5DC" style="width:100%; height:32px; padding:2px; border-radius:6px; cursor:pointer;"></div>
+              <div style="flex:1;"><label style="font-size:10px; text-transform:uppercase;">Color 2</label><input type="color" id="input-fest-c2-0" value="#D4AF37" style="width:100%; height:32px; padding:2px; border-radius:6px; cursor:pointer;"></div>
+            </div>
+          </div>
+
+          <!-- Ceremony 2 -->
+          <div class="fest-edit-card">
+            <div class="fest-edit-badge"><span>🌼</span> Ceremony 2 (Haldi)</div>
+            <div class="form-group"><label>Ceremony Name</label><input type="text" id="input-fest-title-1" value="Haldi Ceremony"></div>
+            <div class="form-group"><label>Emoji Icon</label><input type="text" id="input-fest-icon-1" value="🌼"></div>
+            <div class="form-group"><label>Day &amp; Date</label><input type="text" id="input-fest-date-1" value="Friday, 11 Dec 2026"></div>
+            <div class="form-group"><label>Time</label><input type="text" id="input-fest-time-1" value="11:00 AM onwards"></div>
+            <div class="form-group"><label>Venue / Place</label><input type="text" id="input-fest-place-1" value="Courtyard Palms &amp; Splash Pool"></div>
+            <div class="form-group"><label>Dress Code</label><input type="text" id="input-fest-dress-1" value="Wear Yellow (Sunshine)"></div>
+            <div style="display: flex; gap: 10px; margin-top: 6px;">
+              <div style="flex:1;"><label style="font-size:10px; text-transform:uppercase;">Color 1</label><input type="color" id="input-fest-c1-1" value="#FFD700" style="width:100%; height:32px; padding:2px; border-radius:6px; cursor:pointer;"></div>
+              <div style="flex:1;"><label style="font-size:10px; text-transform:uppercase;">Color 2</label><input type="color" id="input-fest-c2-1" value="#FFA500" style="width:100%; height:32px; padding:2px; border-radius:6px; cursor:pointer;"></div>
+            </div>
+          </div>
+
+          <!-- Ceremony 3 -->
+          <div class="fest-edit-card">
+            <div class="fest-edit-badge"><span>🌿</span> Ceremony 3 (Mehendi)</div>
+            <div class="form-group"><label>Ceremony Name</label><input type="text" id="input-fest-title-2" value="Mehendi Extravaganza"></div>
+            <div class="form-group"><label>Emoji Icon</label><input type="text" id="input-fest-icon-2" value="🌿"></div>
+            <div class="form-group"><label>Day &amp; Date</label><input type="text" id="input-fest-date-2" value="Friday, 11 Dec 2026"></div>
+            <div class="form-group"><label>Time</label><input type="text" id="input-fest-time-2" value="04:00 PM onwards"></div>
+            <div class="form-group"><label>Venue / Place</label><input type="text" id="input-fest-place-2" value="Poolside Lawn &amp; Cabanas"></div>
+            <div class="form-group"><label>Dress Code</label><input type="text" id="input-fest-dress-2" value="Wear Green (Mint / Emerald)"></div>
+            <div style="display: flex; gap: 10px; margin-top: 6px;">
+              <div style="flex:1;"><label style="font-size:10px; text-transform:uppercase;">Color 1</label><input type="color" id="input-fest-c1-2" value="#2E7D32" style="width:100%; height:32px; padding:2px; border-radius:6px; cursor:pointer;"></div>
+              <div style="flex:1;"><label style="font-size:10px; text-transform:uppercase;">Color 2</label><input type="color" id="input-fest-c2-2" value="#A5D6A7" style="width:100%; height:32px; padding:2px; border-radius:6px; cursor:pointer;"></div>
+            </div>
+          </div>
+
+          <!-- Ceremony 4 -->
+          <div class="fest-edit-card">
+            <div class="fest-edit-badge"><span>💃</span> Ceremony 4 (Sangeet)</div>
+            <div class="form-group"><label>Ceremony Name</label><input type="text" id="input-fest-title-3" value="Musical Sangeet"></div>
+            <div class="form-group"><label>Emoji Icon</label><input type="text" id="input-fest-icon-3" value="💃"></div>
+            <div class="form-group"><label>Day &amp; Date</label><input type="text" id="input-fest-date-3" value="Saturday, 12 Dec 2026"></div>
+            <div class="form-group"><label>Time</label><input type="text" id="input-fest-time-3" value="07:00 PM onwards"></div>
+            <div class="form-group"><label>Venue / Place</label><input type="text" id="input-fest-place-3" value="Royal Banquet &amp; Crystal Amphitheatre"></div>
+            <div class="form-group"><label>Dress Code</label><input type="text" id="input-fest-dress-3" value="Indo-Western (Purple &amp; Pink)"></div>
+            <div style="display: flex; gap: 10px; margin-top: 6px;">
+              <div style="flex:1;"><label style="font-size:10px; text-transform:uppercase;">Color 1</label><input type="color" id="input-fest-c1-3" value="#4A154B" style="width:100%; height:32px; padding:2px; border-radius:6px; cursor:pointer;"></div>
+              <div style="flex:1;"><label style="font-size:10px; text-transform:uppercase;">Color 2</label><input type="color" id="input-fest-c2-3" value="#D946EF" style="width:100%; height:32px; padding:2px; border-radius:6px; cursor:pointer;"></div>
+            </div>
+          </div>
+
+          <!-- Ceremony 5 -->
+          <div class="fest-edit-card">
+            <div class="fest-edit-badge"><span>🔥</span> Ceremony 5 (Baraat &amp; Pheras)</div>
+            <div class="form-group"><label>Ceremony Name</label><input type="text" id="input-fest-title-4" value="Baraat &amp; Pheras"></div>
+            <div class="form-group"><label>Emoji Icon</label><input type="text" id="input-fest-icon-4" value="🔥"></div>
+            <div class="form-group"><label>Day &amp; Date</label><input type="text" id="input-fest-date-4" value="Sunday, 13 Dec 2026"></div>
+            <div class="form-group"><label>Time</label><input type="text" id="input-fest-time-4" value="Baraat: 4 PM | Pheras: 5 PM"></div>
+            <div class="form-group"><label>Venue / Place</label><input type="text" id="input-fest-place-4" value="Central Palace Gardens &amp; Mandap"></div>
+            <div class="form-group"><label>Dress Code</label><input type="text" id="input-fest-dress-4" value="Royal Festive (Red &amp; Gold)"></div>
+            <div style="display: flex; gap: 10px; margin-top: 6px;">
+              <div style="flex:1;"><label style="font-size:10px; text-transform:uppercase;">Color 1</label><input type="color" id="input-fest-c1-4" value="#8B0000" style="width:100%; height:32px; padding:2px; border-radius:6px; cursor:pointer;"></div>
+              <div style="flex:1;"><label style="font-size:10px; text-transform:uppercase;">Color 2</label><input type="color" id="input-fest-c2-4" value="#D4AF37" style="width:100%; height:32px; padding:2px; border-radius:6px; cursor:pointer;"></div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
       <div class="form-actions-row">
@@ -3062,6 +3364,20 @@
       document.getElementById('customizer-modal').classList.remove('open');
     }
 
+    function toggleFestivitiesAccordion() {
+      const container = document.getElementById('festivities-edit-container');
+      const arrow = document.getElementById('fest-arrow-icon');
+      if (!container) return;
+      const isHidden = container.style.display === 'none' || container.style.display === '';
+      if (isHidden) {
+        container.style.display = 'block';
+        if (arrow) arrow.style.transform = 'rotate(180deg)';
+      } else {
+        container.style.display = 'none';
+        if (arrow) arrow.style.transform = 'rotate(0deg)';
+      }
+    }
+
     function applyCustomDetails() {
       const gName = document.getElementById('input-groom-name').value;
       const gParents = document.getElementById('input-groom-parents').value;
@@ -3093,12 +3409,49 @@
       }
       document.getElementById('disp-closing-family').innerHTML = `With love and warm regards,<br><strong>${cFamily}</strong>`;
 
+      // Update Festivities (5 Ceremonies)
+      for (let i = 0; i < 5; i++) {
+        const titleIn = document.getElementById(`input-fest-title-${i}`);
+        const iconIn = document.getElementById(`input-fest-icon-${i}`);
+        const dateIn = document.getElementById(`input-fest-date-${i}`);
+        const timeIn = document.getElementById(`input-fest-time-${i}`);
+        const placeIn = document.getElementById(`input-fest-place-${i}`);
+        const dressIn = document.getElementById(`input-fest-dress-${i}`);
+        const c1In = document.getElementById(`input-fest-c1-${i}`);
+        const c2In = document.getElementById(`input-fest-c2-${i}`);
+
+        if (titleIn && document.getElementById(`fest-title-${i}`)) {
+          document.getElementById(`fest-title-${i}`).textContent = titleIn.value;
+        }
+        if (iconIn && document.getElementById(`fest-icon-${i}`)) {
+          document.getElementById(`fest-icon-${i}`).textContent = iconIn.value;
+        }
+        if (dateIn && document.getElementById(`fest-date-${i}`)) {
+          document.getElementById(`fest-date-${i}`).textContent = dateIn.value;
+        }
+        if (timeIn && document.getElementById(`fest-time-${i}`)) {
+          document.getElementById(`fest-time-${i}`).textContent = timeIn.value;
+        }
+        if (placeIn && document.getElementById(`fest-place-${i}`)) {
+          document.getElementById(`fest-place-${i}`).textContent = placeIn.value;
+        }
+        if (dressIn && document.getElementById(`fest-dress-${i}`)) {
+          document.getElementById(`fest-dress-${i}`).textContent = dressIn.value;
+        }
+        if (c1In && document.getElementById(`fest-c1-chip-${i}`)) {
+          document.getElementById(`fest-c1-chip-${i}`).style.backgroundColor = c1In.value;
+        }
+        if (c2In && document.getElementById(`fest-c2-chip-${i}`)) {
+          document.getElementById(`fest-c2-chip-${i}`).style.backgroundColor = c2In.value;
+        }
+      }
+
       // Update Title & WhatsApp
       document.title = `${gName} & ${bName} — Royal Wedding Invitation`;
       document.getElementById('whatsapp-rsvp-link').href = `https://wa.me/?text=Hi!+We+received+the+wedding+invitation+for+${encodeURIComponent(gName)}+%26+${encodeURIComponent(bName)}+and+would+love+to+RSVP+with+our+blessings!`;
 
       closeCustomizerModal();
-      showToast('Invitation details updated! ✨');
+      showToast('Invitation & Festivities updated! ✨');
     }
 
     let customAudioEl = null;
@@ -3154,6 +3507,89 @@
       a.click();
       document.body.removeChild(a);
       showToast('Customized invitation downloaded! 📥');
+    }
+
+    /* ===================================================
+       L. EXTRA TAP & ANIMATION FEATURES
+       =================================================== */
+    // 1. Interactive Sparkle Trail on Tap / Click
+    const sparkleEmojis = ['✨', '✦', '⭐', '💫', '🌸'];
+    function createTouchSparkles(x, y) {
+      for (let i = 0; i < 5; i++) {
+        const el = document.createElement('div');
+        el.className = 'touch-sparkle';
+        el.textContent = sparkleEmojis[Math.floor(Math.random() * sparkleEmojis.length)];
+        const tx = (Math.random() - 0.5) * 90;
+        const ty = (Math.random() - 0.5) * 90 - 20;
+        el.style.left = `${x}px`;
+        el.style.top = `${y}px`;
+        el.style.setProperty('--tx', `${tx}px`);
+        el.style.setProperty('--ty', `${ty}px`);
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 750);
+      }
+    }
+
+    window.addEventListener('pointerdown', (e) => {
+      // Don't spawn sparkles on form inputs or modal to avoid interfering with typing
+      if (e.target.closest('input, textarea, select, .customizer-sheet')) return;
+      createTouchSparkles(e.clientX, e.clientY);
+    });
+
+    // 2. Interactive Sacred Diya Lighting
+    let isDiyaLit = false;
+    function toggleDiyaLight(event) {
+      if (event) event.stopPropagation();
+      const widget = document.getElementById('sacred-diya-widget');
+      const pill = document.getElementById('diya-status-pill');
+      isDiyaLit = !isDiyaLit;
+
+      if (isDiyaLit) {
+        widget.classList.add('diya-lit');
+        pill.innerHTML = '<span>🪔 Sacred Diya Glowing • Tap to Dim</span>';
+        weddingAudio.playTempleChime();
+        triggerPetalBurst(20);
+        showToast('Sacred Diya Lit! May divine blessings shine upon this union 🪔✨');
+      } else {
+        widget.classList.remove('diya-lit');
+        pill.innerHTML = '<span>✨ Tap to Light Sacred Diya 🪔</span>';
+        showToast('Sacred Diya dimmed 🪔');
+      }
+    }
+
+    // 3. Floating Shower Blessings Button
+    let blessingsCount = 1248;
+    function showerCoupleBlessings(event) {
+      if (event) event.stopPropagation();
+      blessingsCount += 1;
+      const counterEl = document.getElementById('blessing-counter-val');
+      if (counterEl) counterEl.textContent = blessingsCount.toLocaleString();
+
+      // Spawn floating +1 badge
+      const badge = document.createElement('div');
+      badge.className = 'floating-blessing-heart';
+      badge.textContent = '+1 Blessing 🌸';
+      const rect = event.currentTarget.getBoundingClientRect();
+      badge.style.left = `${rect.left + rect.width / 2 - 40}px`;
+      badge.style.top = `${rect.top - 20}px`;
+      document.body.appendChild(badge);
+      setTimeout(() => badge.remove(), 1200);
+
+      triggerPetalBurst(30);
+      weddingAudio.playTempleChime();
+      showToast('Blessings showered upon the happy couple! 🌸🙏');
+    }
+
+    // 4. Ganesh Medallion Radiance Aura & Blessing
+    function blessGaneshMedallion(event) {
+      if (event) event.stopPropagation();
+      const el = event.currentTarget;
+      el.classList.add('ganesh-aura-pulse');
+      setTimeout(() => el.classList.remove('ganesh-aura-pulse'), 850);
+
+      weddingAudio.playTempleChime();
+      triggerPetalBurst(18);
+      showToast('ॐ श्री गणेशाय नमः • Auspicious Blessings from Lord Ganesha! 🕉️✨');
     }
   </script>
 
