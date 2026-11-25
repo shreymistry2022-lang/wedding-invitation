@@ -1708,7 +1708,51 @@
         <!-- Inside Page (Visible when cover swings open) -->
         <div class="book-base">
           <svg class="ganesh-cover-medallion" style="width:75px; height:75px;" viewBox="0 0 100 100">
-            <use href="#ganesh-svg-art" />
+            <defs>
+              <linearGradient id="gGoldBase" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fff8db"/>
+                <stop offset="35%" stop-color="#f5d77f"/>
+                <stop offset="70%" stop-color="#d4af37"/>
+                <stop offset="100%" stop-color="#8a5e12"/>
+              </linearGradient>
+            </defs>
+            <!-- Sacred Aura Circles -->
+            <circle cx="50" cy="50" r="46" fill="none" stroke="url(#gGoldBase)" stroke-width="1.5" stroke-dasharray="2.5 2" opacity="0.85"/>
+            <circle cx="50" cy="50" r="42" fill="none" stroke="url(#gGoldBase)" stroke-width="1"/>
+            <!-- Crown / Mukut -->
+            <path d="M40,24 L45,11 L50,6 L55,11 L60,24 Z" fill="url(#gGoldBase)" stroke="#aa771c" stroke-width="0.8"/>
+            <circle cx="50" cy="16" r="2.2" fill="#d91e36"/>
+            <circle cx="50" cy="6" r="1.5" fill="#fff"/>
+            <!-- Ears -->
+            <path d="M40,26 C28,24 22,36 30,44 C33,42 37,38 39,32 Z" fill="url(#gGoldBase)" stroke="#aa771c" stroke-width="0.8"/>
+            <path d="M33,30 C29,35 32,40 35,39" fill="none" stroke="#aa771c" stroke-width="0.8" stroke-linecap="round"/>
+            <path d="M60,26 C72,24 78,36 70,44 C67,42 63,38 61,32 Z" fill="url(#gGoldBase)" stroke="#aa771c" stroke-width="0.8"/>
+            <path d="M67,30 C71,35 68,40 65,39" fill="none" stroke="#aa771c" stroke-width="0.8" stroke-linecap="round"/>
+            <!-- Forehead & Tilak -->
+            <path d="M39,26 Q50,23 61,26 Q59,38 50,40 Q41,38 39,26 Z" fill="url(#gGoldBase)" stroke="#aa771c" stroke-width="0.5"/>
+            <path d="M47,26 L53,26 L51,33 L49,33 Z" fill="#c62828"/>
+            <path d="M50,26 L50,35" stroke="#c62828" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="50" cy="36" r="1.5" fill="#ffd700"/>
+            <!-- Peaceful Eyes -->
+            <path d="M42,32 Q45,30 47,33" fill="none" stroke="#5a2d0c" stroke-width="1" stroke-linecap="round"/>
+            <path d="M53,33 Q55,30 58,32" fill="none" stroke="#5a2d0c" stroke-width="1" stroke-linecap="round"/>
+            <!-- Trunk curving gracefully to left -->
+            <path d="M48,39 Q46,57 36,60 Q30,62 29,56 Q28,50 35,47 Q43,44 48,39" fill="url(#gGoldBase)" stroke="#aa771c" stroke-width="0.8"/>
+            <path d="M42,46 Q45,49 46,45" fill="none" stroke="#aa771c" stroke-width="0.8"/>
+            <path d="M38,52 Q41,55 42,51" fill="none" stroke="#aa771c" stroke-width="0.8"/>
+            <circle cx="28" cy="53" r="3.5" fill="#ff9900" stroke="#d47a00" stroke-width="0.5"/>
+            <circle cx="27" cy="51.5" r="1" fill="#fff" opacity="0.6"/>
+            <!-- Sacred Tusk -->
+            <path d="M43,40 L40,44 L42,44 Z" fill="#ffffff" stroke="#aa771c" stroke-width="0.4"/>
+            <!-- Large tummy (Lambodara) -->
+            <path d="M43,46 Q50,44 57,46 Q66,58 62,72 Q50,78 38,72 Q35,60 43,46 Z" fill="url(#gGoldBase)" stroke="#aa771c" stroke-width="0.8"/>
+            <path d="M44,48 Q52,60 59,68" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-dasharray="2 1.5"/>
+            <ellipse cx="50" cy="66" rx="1.5" ry="1" fill="#805300"/>
+            <!-- Abhaya Mudra Hand -->
+            <path d="M60,52 C65,48 69,52 67,58 C66,62 62,64 60,62 Z" fill="url(#gGoldBase)" stroke="#aa771c" stroke-width="0.8"/>
+            <circle cx="64" cy="55" r="1.5" fill="#c62828"/>
+            <!-- Lotus Base -->
+            <path d="M35,75 Q50,81 65,75 Q50,83 35,75 Z" fill="url(#gGoldBase)" stroke="#aa771c" stroke-width="0.6"/>
           </svg>
           <div style="font-family: var(--font-serif); font-size: 15px; color: var(--gold-dark); margin-top: 10px; font-weight: 600;">
             ॐ श्री गणेशाय नमः
@@ -1731,7 +1775,51 @@
             
             <!-- Auspicious Ganesh Medallion SVG -->
             <svg class="ganesh-cover-medallion ganesh-tappable" viewBox="0 0 100 100" onclick="blessGaneshMedallion(event)" title="Tap for Ganesha's Blessings">
-              <use href="#ganesh-svg-art" />
+              <defs>
+                <linearGradient id="gGoldCover" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#fff8db"/>
+                  <stop offset="35%" stop-color="#f5d77f"/>
+                  <stop offset="70%" stop-color="#d4af37"/>
+                  <stop offset="100%" stop-color="#8a5e12"/>
+                </linearGradient>
+              </defs>
+              <!-- Sacred Aura Circles -->
+              <circle cx="50" cy="50" r="46" fill="none" stroke="url(#gGoldCover)" stroke-width="1.5" stroke-dasharray="2.5 2" opacity="0.85"/>
+              <circle cx="50" cy="50" r="42" fill="none" stroke="url(#gGoldCover)" stroke-width="1"/>
+              <!-- Crown / Mukut -->
+              <path d="M40,24 L45,11 L50,6 L55,11 L60,24 Z" fill="url(#gGoldCover)" stroke="#aa771c" stroke-width="0.8"/>
+              <circle cx="50" cy="16" r="2.2" fill="#d91e36"/>
+              <circle cx="50" cy="6" r="1.5" fill="#fff"/>
+              <!-- Ears -->
+              <path d="M40,26 C28,24 22,36 30,44 C33,42 37,38 39,32 Z" fill="url(#gGoldCover)" stroke="#aa771c" stroke-width="0.8"/>
+              <path d="M33,30 C29,35 32,40 35,39" fill="none" stroke="#aa771c" stroke-width="0.8" stroke-linecap="round"/>
+              <path d="M60,26 C72,24 78,36 70,44 C67,42 63,38 61,32 Z" fill="url(#gGoldCover)" stroke="#aa771c" stroke-width="0.8"/>
+              <path d="M67,30 C71,35 68,40 65,39" fill="none" stroke="#aa771c" stroke-width="0.8" stroke-linecap="round"/>
+              <!-- Forehead & Tilak -->
+              <path d="M39,26 Q50,23 61,26 Q59,38 50,40 Q41,38 39,26 Z" fill="url(#gGoldCover)" stroke="#aa771c" stroke-width="0.5"/>
+              <path d="M47,26 L53,26 L51,33 L49,33 Z" fill="#c62828"/>
+              <path d="M50,26 L50,35" stroke="#c62828" stroke-width="1.8" stroke-linecap="round"/>
+              <circle cx="50" cy="36" r="1.5" fill="#ffd700"/>
+              <!-- Peaceful Eyes -->
+              <path d="M42,32 Q45,30 47,33" fill="none" stroke="#5a2d0c" stroke-width="1" stroke-linecap="round"/>
+              <path d="M53,33 Q55,30 58,32" fill="none" stroke="#5a2d0c" stroke-width="1" stroke-linecap="round"/>
+              <!-- Trunk curving gracefully to left -->
+              <path d="M48,39 Q46,57 36,60 Q30,62 29,56 Q28,50 35,47 Q43,44 48,39" fill="url(#gGoldCover)" stroke="#aa771c" stroke-width="0.8"/>
+              <path d="M42,46 Q45,49 46,45" fill="none" stroke="#aa771c" stroke-width="0.8"/>
+              <path d="M38,52 Q41,55 42,51" fill="none" stroke="#aa771c" stroke-width="0.8"/>
+              <circle cx="28" cy="53" r="3.5" fill="#ff9900" stroke="#d47a00" stroke-width="0.5"/>
+              <circle cx="27" cy="51.5" r="1" fill="#fff" opacity="0.6"/>
+              <!-- Sacred Tusk -->
+              <path d="M43,40 L40,44 L42,44 Z" fill="#ffffff" stroke="#aa771c" stroke-width="0.4"/>
+              <!-- Large tummy (Lambodara) -->
+              <path d="M43,46 Q50,44 57,46 Q66,58 62,72 Q50,78 38,72 Q35,60 43,46 Z" fill="url(#gGoldCover)" stroke="#aa771c" stroke-width="0.8"/>
+              <path d="M44,48 Q52,60 59,68" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-dasharray="2 1.5"/>
+              <ellipse cx="50" cy="66" rx="1.5" ry="1" fill="#805300"/>
+              <!-- Abhaya Mudra Hand -->
+              <path d="M60,52 C65,48 69,52 67,58 C66,62 62,64 60,62 Z" fill="url(#gGoldCover)" stroke="#aa771c" stroke-width="0.8"/>
+              <circle cx="64" cy="55" r="1.5" fill="#c62828"/>
+              <!-- Lotus Base -->
+              <path d="M35,75 Q50,81 65,75 Q50,83 35,75 Z" fill="url(#gGoldCover)" stroke="#aa771c" stroke-width="0.6"/>
             </svg>
             
             <div class="cover-couple-names">
@@ -1804,7 +1892,51 @@
           <!-- Top: Ganesh Medallion -->
           <div style="display: flex; flex-direction: column; align-items: center;">
             <svg class="page-ganesh-medallion ganesh-tappable" viewBox="0 0 100 100" onclick="blessGaneshMedallion(event)" title="Tap for Ganesha's Blessings">
-              <use href="#ganesh-svg-art" />
+              <defs>
+                <linearGradient id="gGoldPage" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#fff8db"/>
+                  <stop offset="35%" stop-color="#f5d77f"/>
+                  <stop offset="70%" stop-color="#d4af37"/>
+                  <stop offset="100%" stop-color="#8a5e12"/>
+                </linearGradient>
+              </defs>
+              <!-- Sacred Aura Circles -->
+              <circle cx="50" cy="50" r="46" fill="none" stroke="url(#gGoldPage)" stroke-width="1.5" stroke-dasharray="2.5 2" opacity="0.85"/>
+              <circle cx="50" cy="50" r="42" fill="none" stroke="url(#gGoldPage)" stroke-width="1"/>
+              <!-- Crown / Mukut -->
+              <path d="M40,24 L45,11 L50,6 L55,11 L60,24 Z" fill="url(#gGoldPage)" stroke="#aa771c" stroke-width="0.8"/>
+              <circle cx="50" cy="16" r="2.2" fill="#d91e36"/>
+              <circle cx="50" cy="6" r="1.5" fill="#fff"/>
+              <!-- Ears -->
+              <path d="M40,26 C28,24 22,36 30,44 C33,42 37,38 39,32 Z" fill="url(#gGoldPage)" stroke="#aa771c" stroke-width="0.8"/>
+              <path d="M33,30 C29,35 32,40 35,39" fill="none" stroke="#aa771c" stroke-width="0.8" stroke-linecap="round"/>
+              <path d="M60,26 C72,24 78,36 70,44 C67,42 63,38 61,32 Z" fill="url(#gGoldPage)" stroke="#aa771c" stroke-width="0.8"/>
+              <path d="M67,30 C71,35 68,40 65,39" fill="none" stroke="#aa771c" stroke-width="0.8" stroke-linecap="round"/>
+              <!-- Forehead & Tilak -->
+              <path d="M39,26 Q50,23 61,26 Q59,38 50,40 Q41,38 39,26 Z" fill="url(#gGoldPage)" stroke="#aa771c" stroke-width="0.5"/>
+              <path d="M47,26 L53,26 L51,33 L49,33 Z" fill="#c62828"/>
+              <path d="M50,26 L50,35" stroke="#c62828" stroke-width="1.8" stroke-linecap="round"/>
+              <circle cx="50" cy="36" r="1.5" fill="#ffd700"/>
+              <!-- Peaceful Eyes -->
+              <path d="M42,32 Q45,30 47,33" fill="none" stroke="#5a2d0c" stroke-width="1" stroke-linecap="round"/>
+              <path d="M53,33 Q55,30 58,32" fill="none" stroke="#5a2d0c" stroke-width="1" stroke-linecap="round"/>
+              <!-- Trunk curving gracefully to left -->
+              <path d="M48,39 Q46,57 36,60 Q30,62 29,56 Q28,50 35,47 Q43,44 48,39" fill="url(#gGoldPage)" stroke="#aa771c" stroke-width="0.8"/>
+              <path d="M42,46 Q45,49 46,45" fill="none" stroke="#aa771c" stroke-width="0.8"/>
+              <path d="M38,52 Q41,55 42,51" fill="none" stroke="#aa771c" stroke-width="0.8"/>
+              <circle cx="28" cy="53" r="3.5" fill="#ff9900" stroke="#d47a00" stroke-width="0.5"/>
+              <circle cx="27" cy="51.5" r="1" fill="#fff" opacity="0.6"/>
+              <!-- Sacred Tusk -->
+              <path d="M43,40 L40,44 L42,44 Z" fill="#ffffff" stroke="#aa771c" stroke-width="0.4"/>
+              <!-- Large tummy (Lambodara) -->
+              <path d="M43,46 Q50,44 57,46 Q66,58 62,72 Q50,78 38,72 Q35,60 43,46 Z" fill="url(#gGoldPage)" stroke="#aa771c" stroke-width="0.8"/>
+              <path d="M44,48 Q52,60 59,68" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-dasharray="2 1.5"/>
+              <ellipse cx="50" cy="66" rx="1.5" ry="1" fill="#805300"/>
+              <!-- Abhaya Mudra Hand -->
+              <path d="M60,52 C65,48 69,52 67,58 C66,62 62,64 60,62 Z" fill="url(#gGoldPage)" stroke="#aa771c" stroke-width="0.8"/>
+              <circle cx="64" cy="55" r="1.5" fill="#c62828"/>
+              <!-- Lotus Base -->
+              <path d="M35,75 Q50,81 65,75 Q50,83 35,75 Z" fill="url(#gGoldPage)" stroke="#aa771c" stroke-width="0.6"/>
             </svg>
             <div class="together-line">Together with their families</div>
           </div>
@@ -1884,7 +2016,51 @@
             <div class="scroll-inner-content">
               
               <svg class="scroll-ganesh ganesh-tappable" viewBox="0 0 100 100" onclick="blessGaneshMedallion(event)" title="Tap for Ganesha's Blessings">
-                <use href="#ganesh-svg-art" />
+                <defs>
+                  <linearGradient id="gGoldScroll" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#fff8db"/>
+                    <stop offset="35%" stop-color="#f5d77f"/>
+                    <stop offset="70%" stop-color="#d4af37"/>
+                    <stop offset="100%" stop-color="#8a5e12"/>
+                  </linearGradient>
+                </defs>
+                <!-- Sacred Aura Circles -->
+                <circle cx="50" cy="50" r="46" fill="none" stroke="url(#gGoldScroll)" stroke-width="1.5" stroke-dasharray="2.5 2" opacity="0.85"/>
+                <circle cx="50" cy="50" r="42" fill="none" stroke="url(#gGoldScroll)" stroke-width="1"/>
+                <!-- Crown / Mukut -->
+                <path d="M40,24 L45,11 L50,6 L55,11 L60,24 Z" fill="url(#gGoldScroll)" stroke="#aa771c" stroke-width="0.8"/>
+                <circle cx="50" cy="16" r="2.2" fill="#d91e36"/>
+                <circle cx="50" cy="6" r="1.5" fill="#fff"/>
+                <!-- Ears -->
+                <path d="M40,26 C28,24 22,36 30,44 C33,42 37,38 39,32 Z" fill="url(#gGoldScroll)" stroke="#aa771c" stroke-width="0.8"/>
+                <path d="M33,30 C29,35 32,40 35,39" fill="none" stroke="#aa771c" stroke-width="0.8" stroke-linecap="round"/>
+                <path d="M60,26 C72,24 78,36 70,44 C67,42 63,38 61,32 Z" fill="url(#gGoldScroll)" stroke="#aa771c" stroke-width="0.8"/>
+                <path d="M67,30 C71,35 68,40 65,39" fill="none" stroke="#aa771c" stroke-width="0.8" stroke-linecap="round"/>
+                <!-- Forehead & Tilak -->
+                <path d="M39,26 Q50,23 61,26 Q59,38 50,40 Q41,38 39,26 Z" fill="url(#gGoldScroll)" stroke="#aa771c" stroke-width="0.5"/>
+                <path d="M47,26 L53,26 L51,33 L49,33 Z" fill="#c62828"/>
+                <path d="M50,26 L50,35" stroke="#c62828" stroke-width="1.8" stroke-linecap="round"/>
+                <circle cx="50" cy="36" r="1.5" fill="#ffd700"/>
+                <!-- Peaceful Eyes -->
+                <path d="M42,32 Q45,30 47,33" fill="none" stroke="#5a2d0c" stroke-width="1" stroke-linecap="round"/>
+                <path d="M53,33 Q55,30 58,32" fill="none" stroke="#5a2d0c" stroke-width="1" stroke-linecap="round"/>
+                <!-- Trunk curving gracefully to left -->
+                <path d="M48,39 Q46,57 36,60 Q30,62 29,56 Q28,50 35,47 Q43,44 48,39" fill="url(#gGoldScroll)" stroke="#aa771c" stroke-width="0.8"/>
+                <path d="M42,46 Q45,49 46,45" fill="none" stroke="#aa771c" stroke-width="0.8"/>
+                <path d="M38,52 Q41,55 42,51" fill="none" stroke="#aa771c" stroke-width="0.8"/>
+                <circle cx="28" cy="53" r="3.5" fill="#ff9900" stroke="#d47a00" stroke-width="0.5"/>
+                <circle cx="27" cy="51.5" r="1" fill="#fff" opacity="0.6"/>
+                <!-- Sacred Tusk -->
+                <path d="M43,40 L40,44 L42,44 Z" fill="#ffffff" stroke="#aa771c" stroke-width="0.4"/>
+                <!-- Large tummy (Lambodara) -->
+                <path d="M43,46 Q50,44 57,46 Q66,58 62,72 Q50,78 38,72 Q35,60 43,46 Z" fill="url(#gGoldScroll)" stroke="#aa771c" stroke-width="0.8"/>
+                <path d="M44,48 Q52,60 59,68" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-dasharray="2 1.5"/>
+                <ellipse cx="50" cy="66" rx="1.5" ry="1" fill="#805300"/>
+                <!-- Abhaya Mudra Hand -->
+                <path d="M60,52 C65,48 69,52 67,58 C66,62 62,64 60,62 Z" fill="url(#gGoldScroll)" stroke="#aa771c" stroke-width="0.8"/>
+                <circle cx="64" cy="55" r="1.5" fill="#c62828"/>
+                <!-- Lotus Base -->
+                <path d="M35,75 Q50,81 65,75 Q50,83 35,75 Z" fill="url(#gGoldScroll)" stroke="#aa771c" stroke-width="0.6"/>
               </svg>
 
               <div class="scroll-subhead">Join Us On</div>
@@ -2492,7 +2668,51 @@
       <section class="closing-section">
         
         <svg class="closing-ganesh ganesh-tappable" viewBox="0 0 100 100" onclick="blessGaneshMedallion(event)" title="Tap for Ganesha's Blessings">
-          <use href="#ganesh-svg-art" />
+          <defs>
+            <linearGradient id="gGoldClosing" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#fff8db"/>
+              <stop offset="35%" stop-color="#f5d77f"/>
+              <stop offset="70%" stop-color="#d4af37"/>
+              <stop offset="100%" stop-color="#8a5e12"/>
+            </linearGradient>
+          </defs>
+          <!-- Sacred Aura Circles -->
+          <circle cx="50" cy="50" r="46" fill="none" stroke="url(#gGoldClosing)" stroke-width="1.5" stroke-dasharray="2.5 2" opacity="0.85"/>
+          <circle cx="50" cy="50" r="42" fill="none" stroke="url(#gGoldClosing)" stroke-width="1"/>
+          <!-- Crown / Mukut -->
+          <path d="M40,24 L45,11 L50,6 L55,11 L60,24 Z" fill="url(#gGoldClosing)" stroke="#aa771c" stroke-width="0.8"/>
+          <circle cx="50" cy="16" r="2.2" fill="#d91e36"/>
+          <circle cx="50" cy="6" r="1.5" fill="#fff"/>
+          <!-- Ears -->
+          <path d="M40,26 C28,24 22,36 30,44 C33,42 37,38 39,32 Z" fill="url(#gGoldClosing)" stroke="#aa771c" stroke-width="0.8"/>
+          <path d="M33,30 C29,35 32,40 35,39" fill="none" stroke="#aa771c" stroke-width="0.8" stroke-linecap="round"/>
+          <path d="M60,26 C72,24 78,36 70,44 C67,42 63,38 61,32 Z" fill="url(#gGoldClosing)" stroke="#aa771c" stroke-width="0.8"/>
+          <path d="M67,30 C71,35 68,40 65,39" fill="none" stroke="#aa771c" stroke-width="0.8" stroke-linecap="round"/>
+          <!-- Forehead & Tilak -->
+          <path d="M39,26 Q50,23 61,26 Q59,38 50,40 Q41,38 39,26 Z" fill="url(#gGoldClosing)" stroke="#aa771c" stroke-width="0.5"/>
+          <path d="M47,26 L53,26 L51,33 L49,33 Z" fill="#c62828"/>
+          <path d="M50,26 L50,35" stroke="#c62828" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="50" cy="36" r="1.5" fill="#ffd700"/>
+          <!-- Peaceful Eyes -->
+          <path d="M42,32 Q45,30 47,33" fill="none" stroke="#5a2d0c" stroke-width="1" stroke-linecap="round"/>
+          <path d="M53,33 Q55,30 58,32" fill="none" stroke="#5a2d0c" stroke-width="1" stroke-linecap="round"/>
+          <!-- Trunk curving gracefully to left -->
+          <path d="M48,39 Q46,57 36,60 Q30,62 29,56 Q28,50 35,47 Q43,44 48,39" fill="url(#gGoldClosing)" stroke="#aa771c" stroke-width="0.8"/>
+          <path d="M42,46 Q45,49 46,45" fill="none" stroke="#aa771c" stroke-width="0.8"/>
+          <path d="M38,52 Q41,55 42,51" fill="none" stroke="#aa771c" stroke-width="0.8"/>
+          <circle cx="28" cy="53" r="3.5" fill="#ff9900" stroke="#d47a00" stroke-width="0.5"/>
+          <circle cx="27" cy="51.5" r="1" fill="#fff" opacity="0.6"/>
+          <!-- Sacred Tusk -->
+          <path d="M43,40 L40,44 L42,44 Z" fill="#ffffff" stroke="#aa771c" stroke-width="0.4"/>
+          <!-- Large tummy (Lambodara) -->
+          <path d="M43,46 Q50,44 57,46 Q66,58 62,72 Q50,78 38,72 Q35,60 43,46 Z" fill="url(#gGoldClosing)" stroke="#aa771c" stroke-width="0.8"/>
+          <path d="M44,48 Q52,60 59,68" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-dasharray="2 1.5"/>
+          <ellipse cx="50" cy="66" rx="1.5" ry="1" fill="#805300"/>
+          <!-- Abhaya Mudra Hand -->
+          <path d="M60,52 C65,48 69,52 67,58 C66,62 62,64 60,62 Z" fill="url(#gGoldClosing)" stroke="#aa771c" stroke-width="0.8"/>
+          <circle cx="64" cy="55" r="1.5" fill="#c62828"/>
+          <!-- Lotus Base -->
+          <path d="M35,75 Q50,81 65,75 Q50,83 35,75 Z" fill="url(#gGoldClosing)" stroke="#aa771c" stroke-width="0.6"/>
         </svg>
 
         <div class="closing-shloka">
@@ -2724,39 +2944,6 @@
        =================================================== -->
   <svg width="0" height="0" style="position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none;" aria-hidden="true">
     <defs>
-      <!-- Reusable Ganesh Ji Auspicious SVG Icon -->
-      <g id="ganesh-svg-art">
-        <defs>
-          <radialGradient id="ganeshGoldGrad" cx="50%" cy="40%" r="55%">
-            <stop offset="0%" stop-color="#fff8db"/>
-            <stop offset="40%" stop-color="#d4af37"/>
-            <stop offset="85%" stop-color="#aa771c"/>
-            <stop offset="100%" stop-color="#694605"/>
-          </radialGradient>
-        </defs>
-        <!-- Aura Circle -->
-        <circle cx="50" cy="50" r="46" fill="none" stroke="url(#ganeshGoldGrad)" stroke-width="2" stroke-dasharray="3 2" opacity="0.6"/>
-        <circle cx="50" cy="50" r="42" fill="url(#ganeshGoldGrad)" opacity="0.1"/>
-        <!-- Crown / Mukut -->
-        <path d="M40,24 L50,12 L60,24 L56,30 L44,30 Z" fill="url(#ganeshGoldGrad)"/>
-        <circle cx="50" cy="18" r="2.5" fill="#fff"/>
-        <!-- Face & Ears -->
-        <path d="M38,32 C26,30 25,44 33,48 C35,46 37,42 38,38 Z" fill="url(#ganeshGoldGrad)"/>
-        <path d="M62,32 C74,30 75,44 67,48 C65,46 63,42 62,38 Z" fill="url(#ganeshGoldGrad)"/>
-        <!-- Forehead & Tilak -->
-        <path d="M40,32 Q50,29 60,32 Q58,45 50,47 Q42,45 40,32 Z" fill="url(#ganeshGoldGrad)"/>
-        <!-- Sacred Tilak / Trishul -->
-        <path d="M48,31 L52,31 L50,40 Z" fill="#b71c1c"/>
-        <circle cx="50" cy="42" r="1.5" fill="#ffd700"/>
-        <!-- Trunk curving gracefully to left -->
-        <path d="M48,46 Q47,65 37,68 Q33,69 33,65 Q33,61 40,58 Q48,54 52,46 Z" fill="url(#ganeshGoldGrad)"/>
-        <!-- Modak in hand / trunk tip -->
-        <circle cx="34" cy="63" r="3.5" fill="#ffb300"/>
-        <!-- Large tummy & Blessing Hand -->
-        <path d="M42,54 Q50,52 58,54 Q66,66 62,78 Q50,84 38,78 Q36,66 42,54 Z" fill="url(#ganeshGoldGrad)" opacity="0.9"/>
-        <circle cx="63" cy="62" r="5" fill="url(#ganeshGoldGrad)"/> <!-- Abhaya Mudra Hand -->
-      </g>
-
       <!-- Reusable Rose Corner Flower SVG -->
       <g id="rose-svg-art">
         <defs>
